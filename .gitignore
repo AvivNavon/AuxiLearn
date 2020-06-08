@@ -1,0 +1,7 @@
+.ipynb_checkpoints
+.DS_Store
+.idea/
+*.egg-info/
+__pycache__/
+.vscode/
+.virtualenvs
