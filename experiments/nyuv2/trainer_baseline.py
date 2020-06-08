@@ -110,6 +110,7 @@ def calc_loss(seg_pred, seg, depth_pred, depth, normal_pred, normal):
 SegNet_SPLIT = SegNetSplit(logsigma=args.method == 'uncert')
 SegNet_SPLIT = SegNet_SPLIT.to(device)
 
+
 # ========
 # evaluate
 # ========
@@ -123,7 +124,7 @@ def evaluate(dataloader, model=None):
         for _, batch in enumerate(dataloader):
             batch = (t.to(device) for t in batch)
             eval_data, eval_label, eval_depth, eval_normal = batch
-            eval_label.type(torch.LongTensor).to(device)
+            eval_label = eval_label.type(torch.LongTensor).to(device)
 
             eval_pred = model(eval_data)
             # loss
