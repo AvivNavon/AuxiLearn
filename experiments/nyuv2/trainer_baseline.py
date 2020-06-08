@@ -24,7 +24,7 @@ parser.add_argument(
     choices=['equal', 'uncert', 'dwa', 'cosine', 'stl', 'gradnorm'],
     help='multi-task weighting or stl: equal, uncert, dwa, cosine, gradnorm'
 )
-parser.add_argument('--dataroot', default='/dataset', type=str, help='dataset root')
+parser.add_argument('--dataroot', default='/nyuv2', type=str, help='dataset root')
 parser.add_argument('--temp', default=2.0, type=float, help='temperature for DWA (must be positive)')
 parser.add_argument('--grad-norm-alpha', default=1.5, type=float, help='alpha for gradNorm')
 parser.add_argument('--weights-lr', default=None, type=float, help='learning rate for weights in gradNorm and Uncert')

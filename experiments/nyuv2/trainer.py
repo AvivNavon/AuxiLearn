@@ -17,7 +17,7 @@ from auxilearn.hypernet import MonoHyperNet, MonoLinearHyperNet, MonoNonlinearHy
 from auxilearn.optim import MetaOptimizer
 
 parser = argparse.ArgumentParser(description='NYU - trainer')
-parser.add_argument('--dataroot', default='/dataset', type=str, help='dataset root')
+parser.add_argument('--dataroot', default='/nyuv2', type=str, help='dataset root')
 parser.add_argument(
     '--aux-net',
     type=str,

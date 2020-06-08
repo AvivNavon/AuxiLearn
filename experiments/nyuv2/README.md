@@ -7,8 +7,20 @@
 ## Code and Dataset 
 
 We use some of the code implementation (e.g. for SegNet) and the data provided in [MTAN](https://github.com/lorenmt/mtan). 
-Please download the dataset provided [here](https://www.dropbox.com/s/p2nn02wijg7peiy/nyuv2.zip?dl=0). It consists of the following tasks: semantic segmentation, depth, surface normal. 
+Please download the dataset provided by [_End-to-End Multi-Task Learning with Attention_](https://arxiv.org/pdf/1803.10704.pdf). 
+The data is available [here](https://www.dropbox.com/s/p2nn02wijg7peiy/nyuv2.zip?dl=0). 
+It consists of the following tasks: semantic segmentation, depth, surface normal. 
 We use the 13-classes semantic segmentation as the main task.
+
+## Download dataset
+
+Download the data from [here](https://www.dropbox.com/s/p2nn02wijg7peiy/nyuv2.zip?dl=0), or run:
+
+```bash
+wget https://www.dropbox.com/s/p2nn02wijg7peiy/nyuv2.zip\?dl\=0
+```
+
+Unzip the data.
 
 ## Baselines 
 
