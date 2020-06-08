@@ -1,7 +1,7 @@
 # NYUv2 Experiment
 
 <p align="center"> 
-    <img src="https://github.com/AvivNavon/AuxiLearn/resources/nyu_losses_and_gradients_tight.png" width="800">
+    <img src="https://github.com/AvivNavon/AuxiLearn/blob/core/resources/nyu_losses_and_gradients_tight.png" width="800">
 </p>
 
 ## Code and Dataset 
