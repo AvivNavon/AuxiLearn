@@ -1,5 +1,8 @@
 # AuxiLearn - Auxiliary Learning by Implicit Differentiation
 
+<p align="center"> 
+    <img src="https://github.com/AvivNavon/AuxiLearn/blob/core/resources/framework.png" width="800">
+</p>
 
 ## Installation
 
