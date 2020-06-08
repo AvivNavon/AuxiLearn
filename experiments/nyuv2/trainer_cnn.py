@@ -20,7 +20,6 @@ parser = argparse.ArgumentParser(description='NYU - trainer CNN')
 parser.add_argument('--dataroot', default='/dataset', type=str, help='dataset root')
 parser.add_argument('--n-meta-loss-accum', type=int, default=1, help='Number of batches to accumulate for meta loss')
 parser.add_argument('--eval-every', type=int, default=1, help='num. epochs between test set eval')
-parser.add_argument('--hidden-dim', nargs='+', type=int, default=[3], help="List of hidden dims for nonlinear")
 args = parser.parse_args()
 
 # set seed - for reproducibility
@@ -235,6 +234,7 @@ for epoch in epoch_iter:
     # iteration for all batches
     SegNet_SPLIT.train()
     for k, batch in enumerate(nyuv2_train_loader):
+        step += 1
 
         batch = (t.to(device) for t in batch)
         train_data, train_label, train_depth, train_normal = batch

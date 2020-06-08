@@ -15,8 +15,6 @@ from experiments.nyuv2.model import SegNetSplit
 from experiments.utils import (get_device, set_logger, set_seed)
 from experiments.weight_methods import WeightMethods
 
-"""Small modification of: https://github.com/lorenmt/mtan/blob/master/im2im_pred/model_segnet_split.py
-"""
 
 parser = argparse.ArgumentParser(description='NYU - Baselines')
 parser.add_argument(
