@@ -20,10 +20,11 @@ parser = argparse.ArgumentParser(description='NYU - trainer CNN')
 parser.add_argument('--dataroot', default='/nyuv2', type=str, help='dataset root')
 parser.add_argument('--n-meta-loss-accum', type=int, default=1, help='Number of batches to accumulate for meta loss')
 parser.add_argument('--eval-every', type=int, default=1, help='num. epochs between test set eval')
+parser.add_argument('--seed', type=int, default=42, help='random seed')
 args = parser.parse_args()
 
 # set seed - for reproducibility
-set_seed(45)
+set_seed(args.seed)
 # logger config
 set_logger()
 

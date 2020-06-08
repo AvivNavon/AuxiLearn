@@ -8,11 +8,11 @@
 
 We use some of the code implementation (e.g. for SegNet) and the data provided in [MTAN](https://github.com/lorenmt/mtan). 
 Please download the dataset provided by [_End-to-End Multi-Task Learning with Attention_](https://arxiv.org/pdf/1803.10704.pdf). 
-The data is available [here](https://www.dropbox.com/s/p2nn02wijg7peiy/nyuv2.zip?dl=0). 
+The data is available [here](https://www.dropbox.com/s/p2nn02wijg7peiy/nyuv2.zip?dl=0) (2.92 GB). 
 It consists of the following tasks: semantic segmentation, depth, surface normal. 
 We use the 13-classes semantic segmentation as the main task.
 
-## Download dataset
+### Download dataset
 
 Download the data from [here](https://www.dropbox.com/s/p2nn02wijg7peiy/nyuv2.zip?dl=0), or run:
 
@@ -20,7 +20,18 @@ Download the data from [here](https://www.dropbox.com/s/p2nn02wijg7peiy/nyuv2.zi
 wget https://www.dropbox.com/s/p2nn02wijg7peiy/nyuv2.zip\?dl\=0
 ```
 
-Unzip the data.
+Unzip the data:
+
+```bash
+unzip nyuv2.zip?dl=0
+```
+
+This will create a folder `nyuv2`.
+
+### Validation split
+
+We preallocated 10\% of training examples to construct a validation set. 
+The mapping of indices for train/val is available in `experiments/nyuv2/hpo_validation_indices.json`.
 
 ## Baselines 
 

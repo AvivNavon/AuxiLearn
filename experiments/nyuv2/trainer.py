@@ -27,10 +27,11 @@ parser.add_argument(
 parser.add_argument('--n-meta-loss-accum', type=int, default=1, help='Number of batches to accumulate for meta loss')
 parser.add_argument('--eval-every', type=int, default=1, help='num. epochs between test set eval')
 parser.add_argument('--hidden-dim', nargs='+', type=int, default=[3], help="List of hidden dims for nonlinear")
+parser.add_argument('--seed', type=int, default=42, help='random seed')
 args = parser.parse_args()
 
 # set seed - for reproducibility
-set_seed(45)
+set_seed(args.seed)
 # logger config
 set_logger()
 
