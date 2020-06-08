@@ -31,12 +31,10 @@ parser.add_argument('--temp', default=2.0, type=float, help='temperature for DWA
 parser.add_argument('--grad-norm-alpha', default=1.5, type=float, help='alpha for gradNorm')
 parser.add_argument('--weights-lr', default=None, type=float, help='learning rate for weights in gradNorm and Uncert')
 parser.add_argument('--eval-every', type=int, default=1, help='num. epochs between test set eval')
-parser.add_argument('--out-dir', type=str, default='outputs', help='Output dir')
-parser.add_argument('--seed', default=42, type=int, help='random seed')
 args = parser.parse_args()
 
-# set seed
-set_seed(args.seed)
+# set seed - for reproducibility
+set_seed(45)
 # logger config
 set_logger()
 
