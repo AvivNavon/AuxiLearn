@@ -244,6 +244,9 @@ for epoch in epoch_iter:
 
         epoch_iter.set_description(f'[{epoch} {k}] Training loss {loss.data.cpu().numpy().item():.5f}')
 
+        # update parameters
+        optimizer.step()
+
     scheduler.step(epoch=epoch)
 
     if (epoch + 1) % args.eval_every == 0:
