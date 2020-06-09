@@ -8,6 +8,7 @@ import torch
 import torch.optim as optim
 from torch.nn import functional as F
 from tqdm import trange
+from torchsummary import summary
 
 from experiments.nyuv2.data import nyu_dataloaders
 from experiments.nyuv2.metrics import compute_iou, compute_miou
@@ -81,13 +82,15 @@ def calc_loss(seg_pred, seg, depth_pred, depth, pred_normal, normal):
 # define model, optimiser and scheduler
 device = get_device()
 SegNet_SPLIT = SegNetSplit(logsigma=False)
-SegNet_SPLIT = SegNet_SPLIT.to(device)
+summary(SegNet_SPLIT, input_size=(3, 288, 384), device='cpu')
 
+SegNet_SPLIT = SegNet_SPLIT.to(device)
 
 # ================
 # hyperparam model
 # ================
 auxiliary_net = MonoNoFCCNNHyperNet(main_task=0, reduction='mean')
+summary(auxiliary_net, input_size=(3, 288, 384), device='cpu')
 auxiliary_net = auxiliary_net.to(device)
 
 # ==========

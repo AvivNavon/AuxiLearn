@@ -8,6 +8,7 @@ import torch
 import torch.optim as optim
 from torch.nn import functional as F
 from tqdm import trange
+from torchsummary import summary
 
 from experiments.nyuv2.data import nyu_dataloaders
 from experiments.nyuv2.metrics import compute_iou, compute_miou
@@ -103,8 +104,8 @@ def calc_loss(seg_pred, seg, depth_pred, depth, normal_pred, normal):
 # =====
 # model
 # =====
-# define model, optimiser and scheduler
 SegNet_SPLIT = SegNetSplit(logsigma=args.method == 'uncert')
+summary(SegNet_SPLIT, input_size=(3, 288, 384), device='cpu')
 SegNet_SPLIT = SegNet_SPLIT.to(device)
 
 

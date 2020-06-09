@@ -79,7 +79,6 @@ def calc_loss(seg_pred, seg, depth_pred, depth, pred_normal, normal):
 # =====
 # model
 # =====
-# define model, optimiser and scheduler
 device = get_device()
 SegNet_SPLIT = SegNetSplit(logsigma=False)
 summary(SegNet_SPLIT, input_size=(3, 288, 384), device='cpu')
