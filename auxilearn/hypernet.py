@@ -297,7 +297,7 @@ class NoFCCNNHyperNet(HyperNet):
     # NYU Input shape is (3, 288, 384)
 
     def __init__(
-            self, main_task, reduction='mean', input_channels=3, init_upper=.1, init_lower=0, weight_normalization=True
+        self, main_task, reduction='mean', input_channels=3, init_upper=.1, init_lower=0, weight_normalization=False
     ):
         super().__init__(input_dim=-1, main_task=main_task)
 
@@ -373,7 +373,7 @@ class MonoNoFCCNNHyperNet(MonoHyperNet):
     # NYU Input shape is (3, 288, 384)
 
     def __init__(
-            self, main_task, reduction='mean', init_upper=.1, init_lower=0., input_channels=3, weight_normalization=True
+        self, main_task, reduction='mean', init_upper=.1, init_lower=0., input_channels=3, weight_normalization=False
     ):
         super().__init__(input_dim=-1, main_task=main_task)
 

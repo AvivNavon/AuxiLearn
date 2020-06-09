@@ -87,9 +87,7 @@ SegNet_SPLIT = SegNet_SPLIT.to(device)
 # ================
 # hyperparam model
 # ================
-auxiliary_net = MonoNoFCCNNHyperNet(
-    main_task=0, reduction='mean', weight_normalization=False,
-)
+auxiliary_net = MonoNoFCCNNHyperNet(main_task=0, reduction='mean')
 auxiliary_net = auxiliary_net.to(device)
 
 # ==========
