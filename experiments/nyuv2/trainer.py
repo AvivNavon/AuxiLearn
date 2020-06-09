@@ -28,7 +28,7 @@ parser.add_argument(
 parser.add_argument('--n-meta-loss-accum', type=int, default=1, help='Number of batches to accumulate for meta loss')
 parser.add_argument('--eval-every', type=int, default=1, help='num. epochs between test set eval')
 parser.add_argument('--hidden-dim', nargs='+', type=int, default=[3], help="List of hidden dims for nonlinear")
-parser.add_argument('--seed', type=int, default=42, help='random seed')
+parser.add_argument('--seed', type=int, default=45, help='random seed')
 args = parser.parse_args()
 
 # set seed - for reproducibility
@@ -197,7 +197,8 @@ def hyperstep():
     total_meta_train_loss = 0.
     for n_train_step, train_batch in enumerate(nyuv2_train_loader):
         if n_train_step < args.n_meta_loss_accum:
-            train_batch = (t.to(device)[:val_batch_size, ] for t in train_batch)
+            # train_batch = (t.to(device)[:val_batch_size, ] for t in train_batch)
+            train_batch = (t.to(device) for t in train_batch)
 
             train_data, train_label, train_depth, train_normal = train_batch
             train_label = train_label.type(torch.LongTensor).to(device)
