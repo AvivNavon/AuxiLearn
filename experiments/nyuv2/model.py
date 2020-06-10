@@ -4,7 +4,7 @@ from torch.nn import functional as F
 
 
 class SegNetSplit(nn.Module):
-    """Modification of the code in:
+    """Modification of the code in: https://github.com/lorenmt/mtan
 
     SegNet with hard-parameter sharing
 
