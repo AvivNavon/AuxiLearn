@@ -58,7 +58,7 @@ nyuv2_train_loader, nyuv2_meta_val_loader, nyuv2_val_loader, nyuv2_test_loader =
 # loss
 # ====
 def calc_loss(seg_pred, seg, depth_pred, depth, pred_normal, normal):
-    """Per-pixel loss
+    """Per-pixel loss, i.e., loss image
 
     """
     # binary mark to mask out undefined pixel space
