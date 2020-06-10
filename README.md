@@ -11,7 +11,7 @@ Clone the repo:
 ```bash
 git clone https://github.com/AvivNavon/AuxiLearn.git
 ```
-`cd` into the cloned folder and istall:
+`cd` into the cloned folder and install:
 
 ```bash
 cd AuxiLearn

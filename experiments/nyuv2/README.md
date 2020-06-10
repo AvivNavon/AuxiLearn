@@ -41,16 +41,16 @@ To run baselines:
 python3 trainer_baseline.py --dataroot <dataroot> --method <method>
 ```
 
-Where `method` is one of:
+where `method` is one of:
 
 |method|desc|
 |----|----|
 |stl|Single task learning |
+|equal| Equal weights|
 |dwa|[Dynamic weighted average](https://arxiv.org/pdf/1803.10704.pdf)|
 |uncert| [Weight uncertainty](https://arxiv.org/abs/1705.07115)|
 |cosine| [Gradient Cosine Similarity](https://arxiv.org/abs/1812.02224)|
 |gradnorm| [GradNorm](https://arxiv.org/abs/1711.02257)|
-|equal| Equal weights|
 
 All methods are implemented in `experiments/weight_methods.py`.
 

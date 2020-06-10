@@ -1,6 +1,6 @@
 from torch.nn.utils.clip_grad import clip_grad_norm_
 
-from auxilearn.hpo import Hypergrad
+from auxilearn.implicit_diff import Hypergrad
 
 
 class MetaOptimizer:

@@ -2,8 +2,9 @@ import torch
 
 
 class Hypergrad:
-    """This is an implementation of "Optimizing Millions of Hyperparameters by Implicit Differentiation"
-    (https://arxiv.org/pdf/1911.02590.pdf)
+    """Implicit differentiation for auxiliary parameters.
+    This implementation follows the Algs. in "Optimizing Millions of Hyperparameters by Implicit Differentiation"
+    (https://arxiv.org/pdf/1911.02590.pdf), with small differences.
 
     """
 

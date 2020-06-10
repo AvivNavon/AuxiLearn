@@ -197,8 +197,7 @@ def hyperstep():
     total_meta_train_loss = 0.
     for n_train_step, train_batch in enumerate(nyuv2_train_loader):
         if n_train_step < args.n_meta_loss_accum:
-            # train_batch = (t.to(device)[:val_batch_size, ] for t in train_batch)
-            train_batch = (t.to(device) for t in train_batch)
+            train_batch = (t.to(device)[:val_batch_size, ] for t in train_batch)
 
             train_data, train_label, train_depth, train_normal = train_batch
             train_label = train_label.type(torch.LongTensor).to(device)
