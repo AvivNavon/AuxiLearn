@@ -50,6 +50,7 @@ for epoch in range(epochs):
     for batch in train_loder:
         step += 1
         # calculate batch loss using 'primary_model' and 'auxiliary_model'
+        primary_optimizer.zero_grad()
         loss = loss_func(train=True)
         # update primary parameters
         loss.backward()
@@ -62,7 +63,7 @@ for epoch in range(epochs):
             # calc current auxiliary set loss - this is the loss over the main task
             auxiliary_set_loss = loss_func(train=False) 
             
-            # update auxiliary parameters
+            # update auxiliary parameters - no need to call loss.backwards() or aux_optimizer.zero_grad()
             aux_optimizer.step(
                 val_loss=auxiliary_set_loss,
                 train_loss=train_set_loss,
