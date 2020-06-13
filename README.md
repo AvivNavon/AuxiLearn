@@ -17,16 +17,20 @@ pip install .
 ## Usage
 
 Given a bi-level optimization problem in which the upper-level parameters (i.e., auxiliary parameters) are only 
-implicitly affecting the upper-level objective, you can use `auxilearn` to compute its gradients through implicit differentiation.
+implicitly affecting the upper-level objective, you can use `auxilearn` to compute the upper-level gradients through implicit differentiation.
 
 The main code component you'll need to use is `auxilearn.optim.MetaOptimizer`. It is a wrapper over
 PyTorch optimizers that updates its parameters through implicit differentiation.
 
-### Example
+### Code example
 
 We assume two models, `primary_model` and `auxiliary_model`, and two dataloaders. 
 The `primary_model` is optimized using the train data in the `train_loader`,  
 and the `auxiliary_model` is optimized using the auxiliary set in the `aux_loader`.
+We assume a `loss_fuction` that return the train loss if `train=True`, or auxiliary set loss if `train=False`.
+Also, we assume the training loss a function of both the primary parameters and the auxiliary parameters, 
+and that the loss on the auxiliary set (or validation set) is a function of the primary parameters only. 
+In _Auxiliary Learning_, the auxiliary set loss is the loss on the main task (see paper for more details). 
 
 ```python
 from auxilearn.optim import MetaOptimizer
@@ -41,21 +45,22 @@ aux_base_optimizer = torch.optim.Adam(auxiliary_model.parameters(), lr=aux_lr)
 aux_optimizer = MetaOptimizer(aux_base_optimizer, hpo_lr=aux_lr)
 
 # training loop
+step = 0
 for epoch in range(epochs):
     for batch in train_loder:
         step += 1
         # calculate batch loss using 'primary_model' and 'auxiliary_model'
-        ...
-        loss = ...
+        loss = loss_func(train=True)
         # update primary parameters
         loss.backward()
         primary_optimizer.step()
         
+        # condition for updating auxiliary parameters
         if step % aux_params_update_every == 0:
             # calc current train loss
-            train_set_loss = ...
+            train_set_loss = loss_func(train=True)
             # calc current auxiliary set loss - this is the loss over the main task
-            auxiliary_set_loss = ... 
+            auxiliary_set_loss = loss_func(train=False) 
             
             # update auxiliary parameters
             aux_optimizer.step(
