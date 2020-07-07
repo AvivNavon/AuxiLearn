@@ -58,7 +58,7 @@ All methods are implemented in `experiments/weight_methods.py`.
 
 ### Auxiliary Networks
 
-We 3 variants of AuxiLearn:
+Three variants of AuxiLearn:
 
 |auxiliary net|desc|
 |----|----|
