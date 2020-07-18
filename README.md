@@ -8,6 +8,11 @@ This repository contains the source code to support the paper [_Auxiliary Learni
     <img src="https://github.com/AvivNavon/AuxiLearn/blob/master/resources/framework.png" width="800">
 </p>
 
+## Links
+
+1. [Paper](https://arxiv.org/abs/2007.02693)
+1. [Project page](https://avivnavon.github.io/AuxiLearn/)
+
 ## Installation
 
 Clone the repo and install:
