@@ -11,7 +11,7 @@ This repository contains the source code to support the paper [_Auxiliary Learni
 ## Links
 
 1. [Paper](https://arxiv.org/abs/2007.02693)
-1. [Project page](https://avivnavon.github.io/AuxiLearn/)
+2. [Project page](https://avivnavon.github.io/AuxiLearn/)
 
 ## Installation
 
@@ -78,6 +78,24 @@ for epoch in range(epochs):
                 aux_params=auxiliary_model.parameters(),
                 parameters=primary_model.parameters(),
             )
+```
+
+## AuxiLearn for generating data
+
+To use AuxiLearn for learning to generate tasks on Oxford-IIIT Pet dataset:
+1. Create a directory for storing the dataset:
+```bash
+cd ./experiments/oxford_pet
+mkdir dataset
+```
+2. Download data and meta-data from [here](https://www.robots.ox.ac.uk/~vgg/data/pets/), and store it on ./dataset.
+3. Run the following for distributing the data between train\val\test folders
+```bash
+python data.py
+```
+4. Run AuxiLearn
+```bash
+python trainer.py
 ```
 
 ## Citation
