@@ -80,7 +80,7 @@ for epoch in range(epochs):
             )
 ```
 
-## AuxiLearn for generating data
+### AuxiLearn for generating data
 
 To use AuxiLearn for learning to generate tasks on Oxford-IIIT Pet dataset:
 1. Create a directory for storing the dataset:
