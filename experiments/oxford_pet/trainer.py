@@ -177,7 +177,7 @@ auxiliary_params += list(auxiliary_combine_net.parameters())
 
 
 meta_opt = optim.SGD(auxiliary_params, lr=args.aux_lr, momentum=args.aux_momentum, weight_decay=args.aux_wd) \
-           if args.meta_optim == 'sgd' \
+           if args.aux_optim == 'sgd' \
            else optim.Adam(auxiliary_params, lr=args.aux_lr, weight_decay=args.aux_wd)
     
 meta_optimizer = MetaOptimizer(
