@@ -45,8 +45,8 @@ parser.add_argument('--num-aux-classes', type=int, default=5, help='number of cl
 parser.add_argument('--aux-lr', type=float, default=1e-3, help='Auxiliary learning rate')
 parser.add_argument('--aux-momentum', type=float, default=.9, help='Auxiliary momentum')
 parser.add_argument('--aux-wd', type=float, default=5e-3, help='Auxiliary weght decay')
-parser.add_argument('--samples-per-class', default=5, type=int, help='number of samples per class in train with label')
-parser.add_argument('--aux-set-size', default=0.2, type=float, help='pct of samples to allocate for aux. set')
+parser.add_argument('--samples-per-class', default=30, type=int, help='number of samples per class in train with label')
+parser.add_argument('--aux-set-size', default=0.0084, type=float, help='pct of samples to allocate for aux. set')
 parser.add_argument('--batch-size', type=int, default=16, help='Batch size')
 parser.add_argument('--test-batch-size', type=int, default=128, help='Batch size')
 parser.add_argument('--eta-min', type=float, default=0., help='min eta')
@@ -182,7 +182,7 @@ meta_opt = optim.SGD(auxiliary_params, lr=args.aux_lr, momentum=args.aux_momentu
            else optim.Adam(auxiliary_params, lr=args.aux_lr, weight_decay=args.aux_wd)
     
 meta_optimizer = MetaOptimizer(
-    meta_optimizer=meta_opt, hpo_lr=args.lr, truncate_iter=7, max_grad_norm=50
+    meta_optimizer=meta_opt, hpo_lr=args.lr, truncate_iter=3, max_grad_norm=50
 )
 
 
