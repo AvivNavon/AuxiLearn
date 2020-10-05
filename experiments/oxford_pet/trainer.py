@@ -268,8 +268,7 @@ def hyperstep():
         break
 
     phi = list(auxiliary_generate_net.parameters())
-    if args.auxilearn_combine:
-        phi += list(auxiliary_combine_net.parameters())
+    phi += list(auxiliary_combine_net.parameters())
     W = [p for n, p in param_net.named_parameters() if 'classifier2' not in n]
 
     curr_hypergrads = meta_optimizer.step(
