@@ -211,7 +211,7 @@ def model_evalution(loader, print_clf_report=False):
 
             num_samples += clf_labels.shape[0]
             acc_loss += loss
-            
+
         target = torch.cat(targets, dim=0).detach().cpu().numpy()
         pred = torch.cat(preds, dim=0)[:, :num_classes].detach().cpu().numpy()
         max_logit = pred.argmax(1)
@@ -246,6 +246,7 @@ def hyperstep():
 
         val_loss = calc_loss(val_pred, clf_labels, pri=True, num_output=num_classes).mean()
         meta_val_loss += val_loss
+        break
 
     inner_loop_end_train_loss = 0.
     for n_train_step, train_batch in enumerate(train_loader):
@@ -264,6 +265,7 @@ def hyperstep():
         inner_loop_end_train_loss += auxiliary_combine_net(
             torch.stack((inner_train_loss_main, inner_train_loss_aux)).t()
         )
+        break
 
     phi = list(auxiliary_generate_net.parameters())
     if args.auxilearn_combine:
