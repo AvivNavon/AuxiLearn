@@ -173,8 +173,7 @@ if args.scheduler:
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=t_max, eta_min=args.eta_min)
 
 auxiliary_params = list(auxiliary_generate_net.parameters())
-if args.auxilearn_combine:
-    auxiliary_params += list(auxiliary_combine_net.parameters())
+auxiliary_params += list(auxiliary_combine_net.parameters())
 
 
 meta_opt = optim.SGD(auxiliary_params, lr=args.aux_lr, momentum=args.aux_momentum, weight_decay=args.aux_wd) \
