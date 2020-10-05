@@ -125,7 +125,7 @@ def calc_loss(x_pred, x_output, num_output, pri=True):
 # =====
 assert args.num_aux_classes > 1
 psi = [args.num_aux_classes] * num_classes
-param_net = ResNet18(psi=psi, pretrained=args.prim_pretrained, num_classes=num_classes)
+param_net = ResNet18(psi=psi, pretrained=args.primary_pretrained, num_classes=num_classes)
 
 # print summary
 summary(param_net, input_size=(3, 224, 224), device='cpu')
