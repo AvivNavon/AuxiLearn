@@ -2,7 +2,7 @@ import logging
 import random
 import numpy as np
 import torch
-
+import argparse
 
 def set_logger():
     logging.basicConfig(
@@ -35,3 +35,21 @@ def get_device(no_cuda=False, gpus='0'):
 
 def detach_to_numpy(tensor):
     return tensor.detach().cpu().numpy()
+
+
+def str2bool(v):
+    if isinstance(v, bool):
+        return v
+    if v.lower() in ('yes', 'true', 't', 'y', '1'):
+        return True
+    elif v.lower() in ('no', 'false', 'f', 'n', '0'):
+        return False
+    else:
+        raise argparse.ArgumentTypeError('Boolean value expected.')
+
+
+def topk(true, pred, k):
+    max_pred = np.argsort(pred, axis=1)[:, -k:]  # take top k
+    two_d_true = np.expand_dims(true, 1)  # 1d -> 2d
+    two_d_true = np.repeat(two_d_true, k, axis=1)  # repeat along second axis
+    return (two_d_true == max_pred).sum()/true.shape[0]
