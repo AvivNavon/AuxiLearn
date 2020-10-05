@@ -31,7 +31,7 @@ parser.add_argument('--scheduler', default=True, type=str2bool, help='learning r
 parser.add_argument('--aux-scale', default=.25, type=float, help='auxiliary task scale')
 parser.add_argument('--optimizer', default="sgd", choices=['adam', 'sgd'], type=str)
 parser.add_argument('--aux-optim', type=str, default='sgd', choices=['adam', 'sgd'],  help="auxilearn optimizer")
-parser.add_argument('--hypernet-type', type=str, choices=['linear', 'nonlinear'], default='linear')
+parser.add_argument('--aux_net', type=str, choices=['linear', 'nonlinear'], default='linear')
 parser.add_argument('--nonlinear-init-upper', default=.2, type=float, help='upper value for nonlinear net')
 parser.add_argument('--hidden-dim', type=lambda s: [item.strip() for item in s.split(',')], default='10,10',
                     help="List of hidden dims for nonlinear")
