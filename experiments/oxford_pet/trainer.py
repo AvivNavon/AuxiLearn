@@ -1,21 +1,19 @@
 import argparse
 import logging
 from io import BytesIO
-from pathlib import Path
 import copy
 
 import numpy as np
 import torch
 import torch.optim as optim
 from sklearn.metrics import classification_report
-from torch import nn
 import torch.nn.functional as F
 from torchsummary import summary
 from tqdm import trange
 from torch.utils.data import DataLoader
 from experiments.oxford_pet.data import Oxford_Pet
-from experiments.oxford_pet.models import ResNet18, auxiliary_network
-from experiments.utils import (get_device, set_logger, set_seed, detach_to_numpy, str2bool, topk)
+from experiments.oxford_pet.models import ResNet18, AuxiliaryNet
+from experiments.utils import (get_device, set_logger, set_seed, str2bool, topk)
 from auxilearn.optim import MetaOptimizer
 from auxilearn.hypernet import (MonoHyperNet, MonoLinearHyperNet, MonoNonlinearHyperNet)
 torch.set_printoptions(profile="full")
@@ -134,7 +132,7 @@ param_net = param_net.to(device)
 # ================
 # hyperparam model
 # ================
-auxiliary_generate_net = auxiliary_network(psi=psi, pretrained=args.auxiliary_pretrained)
+auxiliary_generate_net = AuxiliaryNet(psi=psi, pretrained=args.auxiliary_pretrained)
 auxiliary_generate_net = auxiliary_generate_net.to(device)
 
 # ============================

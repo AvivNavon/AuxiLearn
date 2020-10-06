@@ -1,7 +1,6 @@
 import torch
 import numpy as np
 from torch import nn
-import torch.nn.functional as F
 import torchvision.models as models
 
 
@@ -31,7 +30,7 @@ class ResNet18(nn.Module):
         return p1, p2
 
 
-class auxiliary_network(nn.Module):
+class AuxiliaryNet(nn.Module):
     def __init__(self, psi, pretrained=False, progress=True, **kwargs):
         super().__init__()
         self.model = models.resnet18(pretrained=pretrained, progress=progress, **kwargs)
