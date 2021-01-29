@@ -14,7 +14,7 @@ We use the 13-classes semantic segmentation as the main task.
 
 ### Download dataset
 
-Download the data from [here](https://www.dropbox.com/s/p2nn02wijg7peiy/nyuv2.zip?dl=0), or run:
+Download the data from [here](https://www.dropbox.com/sh/86nssgwm6hm3vkb/AACrnUQ4GxpdrBbLjb6n-mWNa?dl=0), or run:
 
 ```bash
 wget https://www.dropbox.com/s/p2nn02wijg7peiy/nyuv2.zip\?dl\=0

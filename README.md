@@ -1,6 +1,6 @@
 # AuxiLearn - Auxiliary Learning by Implicit Differentiation
 
-This repository contains the source code to support the paper [_Auxiliary Learning by Implicit Differentiation_](https://arxiv.org/abs/2007.02693), by Aviv Navon*, Idan Achituve*, Haggai Maron, Gal Chechik<sup>†</sup> and Ethan Fetaya<sup>†</sup>.
+This repository contains the source code to support the paper [_Auxiliary Learning by Implicit Differentiation_](https://arxiv.org/abs/2007.02693), by Aviv Navon*, Idan Achituve*, Haggai Maron, Gal Chechik<sup>†</sup> and Ethan Fetaya<sup>†</sup>, ICLR 2021.
 
 ---
 
