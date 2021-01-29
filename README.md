@@ -85,10 +85,12 @@ for epoch in range(epochs):
 If you find `auxilearn` to be useful in your own research, please consider citing the following paper:
 
 ```bib
-@article{navon2020auxiliary,
-  title={Auxiliary Learning by Implicit Differentiation},
-  author={Navon, Aviv and Achituve, Idan and Maron, Haggai and Chechik, Gal and Fetaya, Ethan},
-  journal={arXiv preprint arXiv:2007.02693},
-  year={2020}
+@inproceedings{
+navon2021auxiliary,
+title={Auxiliary Learning by Implicit Differentiation},
+author={Aviv Navon and Idan Achituve and Haggai Maron and Gal Chechik and Ethan Fetaya},
+booktitle={International Conference on Learning Representations},
+year={2021},
+url={https://openreview.net/forum?id=n7wIfYPdVet}
 }
 ```
