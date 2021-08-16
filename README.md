@@ -15,7 +15,14 @@ This repository contains the source code to support the paper [_Auxiliary Learni
 
 ## Installation
 
-Clone the repo and install:
+<b>Please note:</b> We encountered some issues and drop in performance while working with different PyTorch versions. Please install AuxiLearn on a clean virtual environment.
+
+```bash
+python3 -m venv <venv>
+source <venv>/bin/activate
+```
+
+On a clean virtual environment clone the repo and install:
 
 ```bash
 git clone https://github.com/AvivNavon/AuxiLearn.git
