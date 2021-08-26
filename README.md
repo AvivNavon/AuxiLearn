@@ -15,7 +15,7 @@ This repository contains the source code to support the paper [_Auxiliary Learni
 
 ## Installation
 
-![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) <b>Please note:</b> We encountered some issues and drop in performance while working with different PyTorch versions. Please install AuxiLearn on a clean virtual environment.
+![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) <b>Please note:</b> We encountered some issues and drops in performance while working with different PyTorch versions. Please install AuxiLearn on a clean virtual environment!
 
 ```bash
 python3 -m venv <venv>
